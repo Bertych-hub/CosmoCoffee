@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню — CosmoCoffee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="CosmoCoffee" class="logo-img">
+                <span class="logo-text">COSMO<span>COFFEE</span></span>
+            </a>
+        </div>
+        <div class="burger-menu" id="burgerBtn">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <nav class="side-menu" id="sideMenu">
+        <a href="index.html">База (Главная)</a>
+        <a href="menu.html">Космо-Меню</a>
+        <a href="contact.html">Связь (Контакты)</a>
+        <a href="vacancies.html">Экипаж (Вакансии)</a>
+        <a href="#">Язык: RU / EN</a>
+    </nav>
+
+    <h1 class="section-title" style="padding-top: 80px;">Орбитальное Меню</h1>
+
+    <section class="menu-grid" id="menuGrid">
+        </section>
+
+    <div class="modal-overlay" id="coffeeModal">
+        <div class="modal-content">
+            <span class="modal-close" id="closeModal">&times;</span>
+            <button class="modal-nav modal-prev" id="prevCoffee">&#10094;</button>
+            <button class="modal-nav modal-next" id="nextCoffee">&#10095;</button>
+            
+            <img src="" alt="" class="modal-img" id="modalImg">
+            <h2 id="modalTitle" style="font-family: 'Orbitron'; color: var(--neon-blue);">Название</h2>
+            <p id="modalDesc" style="margin-top: 15px;">Описание состава...</p>
+            
+            <div class="reviews" id="modalReview">
+                "Отличный вкус, прямо уносит в космос!" — Анонимный Астронавт
+            </div>
+
+            <div class="prices-container" style="justify-content: center; gap: 20px; margin: 20px 0;">
+                <span class="price" id="modalPriceOK">0 ОК</span>
+                <span class="price-usd" id="modalPriceUSD">$0.00</span>
+            </div>
+
+            <button class="btn-glow" id="buyBtn">КУПИТЬ (Списать ОК)</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" target="_blank">Insta-Galaxy</a>
+            <a href="#" target="_blank">Space-VK</a>
+            <a href="#" target="_blank">Telegram-Orbit</a>
+        </div>
+        <p>&copy; 2026 CosmoCoffee. Все права защищены.</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        const coffees = [
+            { id: 1, name: 'Капучино «Млечный путь»', desc: 'Классический капучино с добавлением звездной пыли (корица) и нежнейшей пенкой.', review: '«Идеальное начало светового года!» — Иван, пилот', priceOK: 15, priceUSD: 2.50, img: 'images/coffee1.png' },
+            { id: 2, name: 'Латте «Туманность Андромеды»', desc: 'Нежный латте с сиропом голубая ваниль и синими сливками.', review: '«Цвет просто космос, а вкус еще лучше.» — Анна, инженер', priceOK: 18, priceUSD: 3.00, img: 'images/coffee4.png' },
+            { id: 3, name: 'Раф «Сверхновая»', desc: 'Пряный раф с медом, имбирем и взрывной карамелью на дне.', review: '«Бодрит как гиперпрыжок!» — Макс, навигатор', priceOK: 20, priceUSD: 3.50, img: 'images/coffee1.png' },
+            { id: 4, name: 'Американо «Черная дыра»', desc: 'Крепкий черный кофе без сахара. Затягивает навсегда.', review: '«Для тех, кто работает в ночную смену на орбите.» — Капитан В.', priceOK: 12, priceUSD: 2.00, img: 'images/coffee4.png' },
+            { id: 5, name: 'Эспрессо «Метеорит»', desc: 'Двойной шот чистой энергии. Быстро, мощно, в цель.', review: '«Один глоток и ты готов чинить обшивку.» — Техник Сэм', priceOK: 10, priceUSD: 1.80, img: 'images/coffee1.png' },
+            { id: 6, name: 'Флэт Уайт «Сатурн»', desc: 'Два шота эспрессо и кольца из взбитого молока.', review: '«Баланс вселенной в одной чашке.» — Елена, биолог', priceOK: 16, priceUSD: 2.80, img: 'images/coffee4.png' },
+            { id: 7, name: 'Моккачино «Марсианский закат»', desc: 'Кофе с добавлением красного бельгийского шоколада.', review: '«Напоминает о доме на Марсе.» — Илон', priceOK: 19, priceUSD: 3.20, img: 'images/coffee1.png' },
+            { id: 8, name: 'Айс-кофе «Ледяной гигант»', desc: 'Холодный кофе с кристаллами льда из кометы Галлея.', review: '«Спасает, когда системы охлаждения барахлят.» — Алекс', priceOK: 17, priceUSD: 2.90, img: 'images/coffee4.png' },
+            { id: 9, name: 'Матча-латте «Зеленый пришелец»', desc: 'Японская матча на кокосовом молоке внеземного происхождения.', review: '«Мы пришли с миром и принесли матчу.» — 👽', priceOK: 22, priceUSD: 3.80, img: 'images/coffee1.png' },
+            { id: 10, name: 'Какао «Ядро Юпитера»', desc: 'Горячий, густой шоколад с зефирками в виде астероидов.', review: '«Для самых маленьких космонавтов.» — Маша', priceOK: 20, priceUSD: 3.50, img: 'images/coffee4.png' }
+        ];
+
+        let currentIndex = 0;
+        const grid = document.getElementById('menuGrid');
+        const modal = document.getElementById('coffeeModal');
+        
+        // Генерация меню
+        coffees.forEach((coffee, index) => {
+            const card = document.createElement('div');
+            card.className = 'menu-item';
+            card.innerHTML = `
+                <img src="${coffee.img}" alt="${coffee.name}">
+                <div class="menu-item-info">
+                    <h3>${coffee.name}</h3>
+                    <p>${coffee.desc.substring(0, 40)}...</p>
+                    <div class="prices-container">
+                        <span class="price">${coffee.priceOK} ОК</span>
+                        <span class="price-usd">$${coffee.priceUSD.toFixed(2)}</span>
+                    </div>
+                </div>
+            `;
+            card.addEventListener('click', () => openModal(index));
+            grid.appendChild(card);
+        });
+
+        function openModal(index) {
+            currentIndex = index;
+            updateModal();
+            modal.classList.add('active');
+        }
+
+        function updateModal() {
+            const coffee = coffees[currentIndex];
+            document.getElementById('modalImg').src = coffee.img;
+            document.getElementById('modalTitle').innerText = coffee.name;
+            document.getElementById('modalDesc').innerText = coffee.desc;
+            document.getElementById('modalReview').innerText = coffee.review;
+            document.getElementById('modalPriceOK').innerText = `${coffee.priceOK} ОК`;
+            document.getElementById('modalPriceUSD').innerText = `$${coffee.priceUSD.toFixed(2)}`;
+        }
+
+        document.getElementById('closeModal').addEventListener('click', () => modal.classList.remove('active'));
+        
+        // Навигация стрелками на экране
+        document.getElementById('prevCoffee').addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : coffees.length - 1;
+            updateModal();
+        });
+        document.getElementById('nextCoffee').addEventListener('click', () => {
+            currentIndex = (currentIndex < coffees.length - 1) ? currentIndex + 1 : 0;
+            updateModal();
+        });
+
+        // Навигация клавиатурой
+        document.addEventListener('keydown', (e) => {
+            if (!modal.classList.contains('active')) return;
+            if (e.key === 'ArrowLeft') document.getElementById('prevCoffee').click();
+            if (e.key === 'ArrowRight') document.getElementById('nextCoffee').click();
+            if (e.key === 'Escape') document.getElementById('closeModal').click();
+        });
+
+        // Покупка
+        document.getElementById('buyBtn').addEventListener('click', async () => {
+            const coffee = coffees[currentIndex];
+            
+            /* Для связки с бэкендом:
+            const response = await fetch('http://localhost:3000/api/purchase', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ coffeeId: coffee.id, coffeeName: coffee.name, priceOK: coffee.priceOK, priceUSD: coffee.priceUSD })
+            });
+            const result = await response.json();
+            alert(result.message);
+            */
+
+            alert(`Транзакция одобрена! Вы купили ${coffee.name} за ${coffee.priceOK} ОК. Приятного полета!`);
+            modal.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

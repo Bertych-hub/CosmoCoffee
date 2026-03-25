@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вакансии — CosmoCoffee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="CosmoCoffee" class="logo-img">
+                <span class="logo-text">COSMO<span>COFFEE</span></span>
+            </a>
+        </div>
+        <div class="burger-menu" id="burgerBtn">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <nav class="side-menu" id="sideMenu">
+        <a href="index.html">База (Главная)</a>
+        <a href="menu.html">Космо-Меню</a>
+        <a href="contact.html">Связь (Контакты)</a>
+        <a href="vacancies.html">Экипаж (Вакансии)</a>
+        <a href="#">Язык: RU / EN</a>
+    </nav>
+
+    <section style="padding: 120px 10%; text-align: center; min-height: 80vh;">
+        <h1 class="section-title" style="margin-top: 0;">Экипаж Станции</h1>
+        <p style="font-size: 1.2rem; margin-bottom: 40px;">Мы ищем талантливых специалистов, готовых покорять космос вместе с нами! Нажми на должность, чтобы изучить протокол.</p>
+        
+        <div class="vacancies-list" id="vacanciesList">
+            <div class="vacancy-card">
+                <h3>Бариста звёздного уровня</h3>
+                <div class="vacancy-details">
+                    <p><strong>Миссия:</strong> Приготовление лучших напитков в галактике, поддержка связи с клиентами-астронавтами.</p>
+                    <p><strong>Требования:</strong> Умение взбивать молоко в невесомости, знание сортов зерен, стрессоустойчивость при метеоритных дождях.</p>
+                    <p><strong>Оплата:</strong> 1500 ОК + чаевые.</p>
+                </div>
+            </div>
+            
+            <div class="vacancy-card">
+                <h3>Менеджер космической станции</h3>
+                <div class="vacancy-details">
+                    <p><strong>Миссия:</strong> Управление сменой, контроль поставок зерен с Земли, разрешение конфликтов с инопланетными расами.</p>
+                    <p><strong>Требования:</strong> Лидерские качества, уровень допуска 3+, опыт работы в общепите от 2 световых лет.</p>
+                    <p><strong>Оплата:</strong> 2500 ОК.</p>
+                </div>
+            </div>
+
+            <div class="vacancy-card">
+                <h3>Инженер по кофемашинам (Механик)</h3>
+                <div class="vacancy-details">
+                    <p><strong>Миссия:</strong> Ремонт гравитационных капучинаторов и калибровка экстракции при перепадах давления.</p>
+                    <p><strong>Требования:</strong> Техническое образование, умение пользоваться плазменным резаком и изолентой.</p>
+                    <p><strong>Оплата:</strong> 2000 ОК.</p>
+                </div>
+            </div>
+
+            <div class="vacancy-card">
+                <h3>Специалист по межгалактическим поставкам (Логист)</h3>
+                <div class="vacancy-details">
+                    <p><strong>Миссия:</strong> Расчет траекторий доставки сиропов и стаканчиков так, чтобы они не попали в черную дыру.</p>
+                    <p><strong>Требования:</strong> Знание астрофизики, опыт работы в Excel (да, он и в 2026 году нужен).</p>
+                    <p><strong>Оплата:</strong> 2200 ОК.</p>
+                </div>
+            </div>
+
+            <div class="vacancy-card">
+                <h3>SMM-космонавт (Контент-мейкер)</h3>
+                <div class="vacancy-details">
+                    <p><strong>Миссия:</strong> Ведение Insta-Galaxy и Space-VK, съемка Reels в открытом космосе.</p>
+                    <p><strong>Требования:</strong> Идеальное чувство стиля, умение делать фото без засветов от сверхновых.</p>
+                    <p><strong>Оплата:</strong> 1800 ОК.</p>
+                </div>
+            </div>
+        </div>
+
+        <a href="contact.html" class="btn-glow" style="margin-top: 50px;">СВЯЗАТЬСЯ С ОТДЕЛОМ КАДРОВ</a>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" target="_blank">Insta-Galaxy</a>
+            <a href="#" target="_blank">Space-VK</a>
+            <a href="#" target="_blank">Telegram-Orbit</a>
+        </div>
+        <p>&copy; 2026 CosmoCoffee. Все права защищены.</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Аккордеон для вакансий
+        const cards = document.querySelectorAll('.vacancy-card');
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                // Закрываем все остальные
+                cards.forEach(c => { if(c !== card) c.classList.remove('open') });
+                // Переключаем текущую
+                card.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>

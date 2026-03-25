@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosmoCoffee | Почувствуй вкус бесконечности</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="CosmoCoffee" class="logo-img">
+                <span class="logo-text">COSMO<span>COFFEE</span></span>
+            </a>
+        </div>
+        <div class="test-controls" style="margin-right: 20px; display: flex; gap: 10px;">
+            <a href="loading.html" style="color: var(--neon-blue); text-decoration: none; font-size: 0.8rem; border: 1px solid; padding: 2px 5px;">ТЕСТ: LOAD</a>
+            <a href="404.html" style="color: var(--neon-purple); text-decoration: none; font-size: 0.8rem; border: 1px solid; padding: 2px 5px;">ТЕСТ: 404</a>
+        </div>
+        <div class="burger-menu" id="burgerBtn">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <nav class="side-menu" id="sideMenu">
+        <a href="index.html">База (Главная)</a>
+        <a href="menu.html">Космо-Меню</a>
+        <a href="contact.html">Связь (Контакты)</a>
+        <a href="vacancies.html">Экипаж (Вакансии)</a>
+        <a href="#">Язык: RU / EN</a>
+    </nav>
+
+    <section class="hero" style="background-image: url('images/nebula.mp4');">
+        <div class="stars"></div>
+        <div class="moving-coffee-container">
+            <div class="coffee-track">
+                <img src="images/bean.png" alt="bean">
+                <img src="images/cup-icon.png" alt="cup">
+                <img src="images/bean.png" alt="bean">
+                <img src="images/cup-icon.png" alt="cup">
+                <img src="images/bean.png" alt="bean">
+                <img src="images/cup-icon.png" alt="cup">
+                <img src="images/bean.png" alt="bean">
+                <img src="images/cup-icon.png" alt="cup">
+                <img src="images/bean.png" alt="bean">
+                <img src="images/cup-icon.png" alt="cup">
+                <img src="images/bean.png" alt="bean">
+                <img src="images/cup-icon.png" alt="cup">
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>Попробуй Космос на вкус</h1>
+            <p>Первая кофейня на орбите вашего города. Принимаем к оплате 100% <strong>ОК (Орбитные Купоны)</strong>.</p>
+            <a href="menu.html" class="btn-glow">ЗАКАЗАТЬ ПОЛЁТ</a>
+        </div>
+    </section>
+
+    <section class="why-us">
+        <h2 class="section-title">Почему выбирают наш сектор?</h2>
+        <div class="grid-container">
+            <div class="card pulse">
+                <img src="images/icon-float.png" alt="Невесомость" class="card-icon">
+                <h3>Нулевая гравитация</h3>
+                <p>Наша пенка не оседает. Вообще. Никогда.</p>
+            </div>
+            <div class="card pulse">
+                <img src="images/icon-star.png" alt="Звездная обжарка" class="card-icon">
+                <h3>Звездная обжарка</h3>
+                <p>Зерна обжариваются энергией сверхновых звезд.</p>
+            </div>
+            <div class="card pulse">
+                <img src="images/icon-ok.png" alt="Орбитные Купоны" class="card-icon">
+                <h3>Кэшбэк в ОК</h3>
+                <p>За каждый глоток вы получаете Орбитные Купоны на свой счет.</p>
+            </div>
+            <div class="card pulse">
+                <img src="images/icon-ok.png" alt="Орбитные Купоны" class="card-icon">
+                <h3>ОК-копилка</h3>
+                <p>Орбитные Купоны можно копить как бонусы для дальнейших полётов в кофейне.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-menu-section">
+        <h2 class="section-title" style="font-size: 2rem;">Быстрый запуск</h2>
+        <div class="quick-slider-wrapper">
+            <a href="menu.html" class="quick-item">
+                <img src="images/coffee1.png" alt="Капучино">
+                <h3>Млечный путь</h3>
+                <p style="color: var(--gold-ok);">15 ОК</p>
+            </a>
+            <a href="menu.html" class="quick-item">
+                <img src="images/coffee4.png" alt="Латте">
+                <h3>Туманность Андромеды</h3>
+                <p style="color: var(--gold-ok);">18 ОК</p>
+            </a>
+            <a href="menu.html" class="quick-item">
+                <img src="images/coffee1.png" alt="Раф">
+                <h3>Сверхновая</h3>
+                <p style="color: var(--gold-ok);">20 ОК</p>
+            </a>
+            <a href="menu.html" class="quick-item">
+                <img src="images/coffee4.png" alt="Американо">
+                <h3>Черная дыра</h3>
+                <p style="color: var(--gold-ok);">12 ОК</p>
+            </a>
+            <a href="menu.html" class="quick-item">
+                <img src="images/coffee1.png" alt="Матча"> <h3>Зеленый пришелец</h3>
+                <p style="color: var(--gold-ok);">22 ОК</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="portals-container">
+        <a href="menu.html" class="portal">
+            <div class="portal-inner"><span>МЕНЮ</span></div>
+        </a>
+        <a href="contact.html" class="portal">
+            <div class="portal-inner"><span>КОНТАКТЫ</span></div>
+        </a>
+        <a href="vacancies.html" class="portal">
+            <div class="portal-inner"><span>ВАКАНСИИ</span></div>
+        </a>
+    </section>
+
+    <section class="interaction-zone">
+        <div class="faq">
+            <h3>Вопросы из центра управления</h3>
+            <details>
+                <summary>Где взять Орбитные Купоны (ОК)?</summary>
+                <p>ОК начисляются за участие в экспедициях и покупку авторских напитков.</p>
+            </details>
+            <details>
+                <summary>Есть ли доставка на Луну?</summary>
+                <p>В данный момент доставка ограничена земной атмосферой, но мы работаем над этим.</p>
+            </details>
+            <details>
+                <summary>Как стать бариста в космосе?</summary>
+                <p>Пройди обучение в нашей академии и получи скафандр бариста.</p>
+            </details>
+        </div>
+
+        <div class="feedback-form">
+            <h3>Связь с базой</h3>
+            <form id="cosmoForm">
+                <input type="text" placeholder="Ваш позывной" required>
+                <input type="email" placeholder="Звездная почта" required>
+                <textarea placeholder="Ваше сообщение..." rows="4" required></textarea>
+                <button type="submit" class="btn-glow">ОТПРАВИТЬ СИГНАЛ</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" target="_blank">Insta-Galaxy</a>
+            <a href="#" target="_blank">Space-VK</a>
+            <a href="#" target="_blank">Telegram-Orbit</a>
+        </div>
+        <p>&copy; 2026 CosmoCoffee. Все права защищены.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
